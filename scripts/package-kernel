@@ -32,12 +32,13 @@ MODULE_EXTRA_LIST=$(readlink -f modules-extra.list)
 
 cd ${SOURCEDIR}
 
+echo "creating firmware ${FIRMWARE}"
 create_firmware_tar $FIRMWARE
 
 mkdir -p ${DIST}/kernel
 
 FILE=$(echo linux*.tar)
-
+echo "splitting '${FILE}'"
 (
     split_tar $FILE $MODULE_LIST $MODULE_EXTRA_LIST
 )
