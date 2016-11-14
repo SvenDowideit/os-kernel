@@ -18,6 +18,9 @@ trash-keep: .dapper
 
 deps: trash
 
+shell-bind: .dapper
+	./.dapper -m bind -s
+
 .DEFAULT_GOAL := ci
 
 .PHONY: $(TARGETS)

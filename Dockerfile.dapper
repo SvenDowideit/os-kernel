@@ -161,5 +161,7 @@ RUN curl -sL https://releases.rancher.com/dapper/latest/dapper-`uname -s`-`uname
 #RUN cd ${DOWNLOADS} && \
 #    curl -pfL ${!OS_BASE_URL} | tar xvJf -
 
+RUN mkdir -p ./dist
+
 ENTRYPOINT ["./scripts/entry"]
 CMD ["ci"]
